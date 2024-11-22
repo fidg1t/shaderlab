@@ -1,0 +1,7 @@
+# Directories
+
+vendor/** linguist-vendored
+
+# Files
+*.h linguist-language=C++
+src/glad.cpp linguist-vendored
