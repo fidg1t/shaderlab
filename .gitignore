@@ -1,4 +1,6 @@
 /out
 bin/
 build/
+build-make/
+build-vs/
 CMakeSettings.json
