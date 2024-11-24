@@ -14,6 +14,8 @@
 // Defines
 //-----------------------------------------------------------------------------
 
+static void FramebufferSizeCallback(GLFWwindow* window, int width, int height);
+
 //-----------------------------------------------------------------------------
 // Functions
 //-----------------------------------------------------------------------------
@@ -29,11 +31,19 @@ Window::Window(const char* name)
   }
   
   glfwMakeContextCurrent(m_glfwWindow);
+
+  glfwSetFramebufferSizeCallback(m_glfwWindow, FramebufferSizeCallback);
 }
 
 Window::~Window()
 {
 
+}
+
+void Window::Update(double dt)
+{
+  glfwSwapBuffers(m_glfwWindow);
+  glfwPollEvents();
 }
 
 GLFWwindow* Window::GetGLFWWindow() const
@@ -44,4 +54,9 @@ GLFWwindow* Window::GetGLFWWindow() const
 bool Window::ShouldClose() const
 {
   return glfwWindowShouldClose(m_glfwWindow);
+}
+
+static void FramebufferSizeCallback(GLFWwindow* window, int width, int height)
+{
+  glViewport(0, 0, width, height);
 }

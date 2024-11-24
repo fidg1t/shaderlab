@@ -20,6 +20,8 @@ public:
   Window(const char* name);
   ~Window();
 
+  void Update(double dt);
+
   GLFWwindow* GetGLFWWindow() const;
   bool ShouldClose() const;
 

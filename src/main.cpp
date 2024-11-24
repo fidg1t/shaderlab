@@ -25,9 +25,15 @@ int main(void)
 
   renderer.Init();
 
+  double last = 0;
+
   while (!renderer.ShouldExit())
   {
-    renderer.Update();
+    double now = glfwGetTime();
+    double dt = now - last;
+    last = now;
+
+    renderer.Update(dt);
     renderer.Render();
   }
 

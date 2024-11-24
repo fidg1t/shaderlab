@@ -50,9 +50,9 @@ void Renderer::Init()
   glViewport(0, 0, 800, 600);
 }
 
-void Renderer::Update()
+void Renderer::Update(double dt)
 {
-
+  m_window->Update(dt);
 }
 
 void Renderer::Render()

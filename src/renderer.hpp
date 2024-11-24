@@ -23,7 +23,7 @@ public:
   ~Renderer();
 
   void Init();
-  void Update();
+  void Update(double dt);
   void Render();
   void Exit();
   
