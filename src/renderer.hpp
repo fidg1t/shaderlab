@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------------
-// Filename: window.hpp
-// Purpose:  Window handling
+// Filename: renderer.hpp
+// Purpose:  Template file
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
@@ -14,14 +14,15 @@
 // Class
 //-----------------------------------------------------------------------------
 
-class Window
+class Renderer
 {
 public:
-  Window(const char* name);
-  ~Window();
+  Renderer();
+  ~Renderer();
 
-  GLFWwindow* GetGLFWWindow() const;
-
+  void Init();
+  void Update();
+  void Render();
+  void Exit();
 private:
-  GLFWwindow* m_glfwWindow;
 };

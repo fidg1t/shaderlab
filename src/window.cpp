@@ -35,3 +35,8 @@ Window::~Window()
 {
 
 }
+
+GLFWwindow* Window::GetGLFWWindow() const
+{
+  return m_glfwWindow;
+}

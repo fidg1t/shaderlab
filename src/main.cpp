@@ -41,7 +41,7 @@ int main(void)
 
   glViewport(0, 0, 800, 600);
 
-  while (true) { ; }
+  while (!glfwWindowShouldClose(window.GetGLFWWindow())) { ; }
 
   glfwTerminate();
 
