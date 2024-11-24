@@ -19,7 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\glad.cpp" />
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\stub.cpp" />
+    <ClCompile Include="..\src\window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\stub.hpp" />
+    <ClInclude Include="..\src\window.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

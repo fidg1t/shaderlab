@@ -17,6 +17,8 @@
 class Window
 {
 public:
-  Window();
+  Window(const char* name);
   ~Window();
+private:
+  GLFWwindow* m_glfwWindow;
 };
