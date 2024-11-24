@@ -10,6 +10,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+class Window;
+
 //-----------------------------------------------------------------------------
 // Class
 //-----------------------------------------------------------------------------
@@ -24,5 +26,8 @@ public:
   void Update();
   void Render();
   void Exit();
+  
+  bool ShouldExit() const;
 private:
+  Window* m_window;
 };

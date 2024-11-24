@@ -9,6 +9,7 @@
 
 #include <iostream>
 #include "window.hpp"
+#include "renderer.hpp"
 
 //-----------------------------------------------------------------------------
 // Defines
@@ -20,30 +21,17 @@
 
 int main(void)
 {
-  // Setup GLFW
-  // TODO: Abstract into own system
-  glfwInit();
+  Renderer renderer;
 
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
-  glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+  renderer.Init();
 
-  Window window("Shaderlab");
-
-  // Setup GLAD
-  // TODO: Abstract into own system
-
-  if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+  while (!renderer.ShouldExit())
   {
-    std::cerr << "Failed to initialize GLAD" << std::endl;
-    return -1;
+    renderer.Update();
+    renderer.Render();
   }
 
-  glViewport(0, 0, 800, 600);
-
-  while (!glfwWindowShouldClose(window.GetGLFWWindow())) { ; }
-
-  glfwTerminate();
+  renderer.Exit();
 
   return 0;
 }

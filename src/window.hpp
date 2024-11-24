@@ -21,6 +21,7 @@ public:
   ~Window();
 
   GLFWwindow* GetGLFWWindow() const;
+  bool ShouldClose() const;
 
 private:
   GLFWwindow* m_glfwWindow;

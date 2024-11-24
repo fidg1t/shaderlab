@@ -40,3 +40,8 @@ GLFWwindow* Window::GetGLFWWindow() const
 {
   return m_glfwWindow;
 }
+
+bool Window::ShouldClose() const
+{
+  return glfwWindowShouldClose(m_glfwWindow);
+}
